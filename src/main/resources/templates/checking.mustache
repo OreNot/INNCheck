@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Поиск по ИНН</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" href="images/Greenatom.ico" type="image/x-icon">
+</head>
+<body>
+<br>
+<br>
+<div>
+<img src="D:\INNCheck\src\main\resources\templates\images\CC_logo.png" width="450" height="230" alt="no"/>
+</div>
+<br>
+<br>
+<div><h2><font face="Times New Roman" color="black">Проверка организаций</font></h2></div>
+<br>
+Последнее обновление базы: {{upd}}
+<br>
+<br>
+<form method="post">
+    <input type="text" name="inn" placeholder="ИНН">
+    <button type="submit">Проверить</button>
+</form>
+
+
+<br>
+<br>
+{{#organizations}}
+<div>
+    <b>Наименование организации: {{value}}</b><br>
+    <b>Полное наименование организации: {{data.name.full_with_opf}}</b><br>
+    <b>Краткое наименование организации: {{data.name.short_with_opf}}</b><br>
+    <b>Форма собственности: {{data.opf.full}}</b><br>
+    <b>ИНН: {{data.inn}}</b><br>
+    <b>ОГРН: {{data.ogrn}}</b><br>
+    <b>КПП: {{data.kpp}}</b><br>
+    <b>ОКПО: {{data.okpo}}</b><br>
+    <b>ОКВЕД: {{data.okved}}</b><br>
+    <b>Адрес: {{data.address.value}}</b><br>
+    <b>Индекс: {{data.address.data.postal_code}}</b><br>
+    <br><br>
+
+
+</div>
+{{/organizations}}
+<br>
+<br>
+<br>
+
+<a href="javascript:scroll(0,0)" > В начало </a>
+</body>
+</html>
+
+
+
